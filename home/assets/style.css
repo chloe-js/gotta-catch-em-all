@@ -1,0 +1,124 @@
+*{
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  header{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #6d6875;
+    font-family: 'Press Start 2P';
+  }
+  
+  .h1container{
+    display: inline-block;
+  }
+  
+  .mainContainer{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 50vh;
+  }
+  
+  header h1{
+    animation: type 2s steps(31, end) forwards,
+    blink .8s infinite;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .15em solid whitesmoke;
+    width: 0;
+    color: whitesmoke;
+  }
+  
+  header a{
+    font-size: 1.6rem;
+    width: 20%;
+    align-self: center;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    transition:.4s;
+    font-family: 'Press Start 2P';
+    background-color: lightgrey;
+    color:gray;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border-radius: 7px;
+    cursor: pointer;
+  }
+  
+  header a:hover{
+    background-color: transparent;
+  }
+  
+  @keyframes type {
+    from {width: 0;}
+    to {width: 100%;}
+  }
+  
+  @keyframes blink {
+    form {border-color: whitesmoke;}
+    to {border-color: transparent;}
+  }
+  
+  .search-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 80%;
+    height: 10vh;
+    background-color: rgba(0, 255, 255, 0.348);
+    padding: 2.5vh;
+  }
+  
+  .search-container h2{
+    margin-right: 20px;
+    font-size: 1.8rem;
+  }
+  
+  
+  .parallax{
+    min-height: 90vh;
+    display: flex;
+  }
+  
+  .selectedItems{
+    width: 25%;
+    font-size: 1.4rem;
+    padding: 10px;
+    padding-top: 50px;
+    background-color: #756870;
+    color: whitesmoke;
+    text-align: center;
+  }
+  
+  .cards{
+    width: 75%;
+    
+    padding: 10px;
+    background-color: #968399;
+    display: grid;
+    grid: auto / repeat(3,1fr);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  
+  .individualCard{
+    height: 100vh;
+    background-color: #6d6875;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid salmon;
+    padding: 10px;
+  }
