@@ -23,4 +23,4 @@ origin -- "Location of the remote repo"
 --set-upstream -- "Set the online repo I want to push this branch to, my upstream can only be linked to one branch at a time"
 git pull origin branchName -- "Grabs contents of the online version of that branch and adds it to your current branch"
 git status -- "Gives you a rundown of what branch you're in and if you have unstaged files or untracked files, also checks if you're up to date with the remote version of that branch"
-git branch -- "Shows both the branches that are available locally and what branch you're currently on"
+git branch -- "Shows both the branches that are available locally and what branch you're currently on".
