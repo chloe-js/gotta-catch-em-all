@@ -1,5 +1,6 @@
-//yoinks the names from the api to be used in searching thingy
+import * as Move from '../../battle/assets/moves.js'
 
+//yoinks the names from the api to be used in searching thingy
 let slot1Num = 0
 let slot2Num = 0
 let slot3Num = 0
@@ -12,6 +13,8 @@ let slot3Filled = false
 let slot4Filled = false
 let slot5Filled = false
 let slot6Filled = false
+
+document.getElementById('searchBar').addEventListener('keydown',  () => searchbarBeSearched())
 
 async function searchbarBeSearched() {
     document.querySelector("#nameSlot1").innerText = ""
@@ -89,22 +92,6 @@ async function searchbarBeSearched() {
     }
 }
 
-const randomNum = (amt) => Math.floor(Math.random() * amt)
-
-function deliverRandomMove(amt) {
-    const nums = []
-    for (let i = 0; i < 4; i++) {
-        let num = randomNum(amt)
-        if (nums.includes(num) && nums.length !== 4) {
-            i -= 1
-            randomNum(amt)
-        } else {
-            nums.push(num)
-        }
-    }
-    return nums
-}
-
 
 document.querySelector("#nameSlot1").addEventListener("click", async () => {
     const response = await fetch(
@@ -112,7 +99,7 @@ document.querySelector("#nameSlot1").addEventListener("click", async () => {
     )
     const data = await response.json()
     // LINK
-    retrieveMovesOfSelectedPokemon(data, 1)
+    Move.retrieveMovesOfSelectedPokemon(data, 1)
 
     if (slot1Filled === false) {
         document.querySelector("#chosenName1").innerText = data.name
@@ -193,7 +180,7 @@ document.querySelector("#nameSlot2").addEventListener("click", async () => {
         `https://pokeapi.co/api/v2/pokemon/${slot2Num}`
     )
     const data = await response.json()
-    retrieveMovesOfSelectedPokemon(data, 2)
+    Move.retrieveMovesOfSelectedPokemon(data, 2)
 
     if (slot1Filled === false) {
         document.querySelector("#chosenName1").innerText = data.name
@@ -603,30 +590,16 @@ document.querySelector("button").addEventListener("click", () => {
 //     document.querySelector("img").src = data.sprites.front_default
 // })
 
-const moveLibs = {
-    pokemon1Moves: [],
-    pokemon2Moves: []
+
+
+document.getElementById('nextpg').addEventListener('click', () => getValues())
+
+let movesObject;
+
+function getValues(){
+    movesObject = Move.retrieveMoveDataAsObject();
+
+    console.log(movesObject)
+    console.log(movesObject['pokemon1Moves'][0].name)
+    console.log(movesObject['pokemon1Moves'][0].power)
 }
-// LINK
-function retrieveMovesOfSelectedPokemon(pokemon, id){
-    const randomMovesArr = deliverRandomMove(pokemon.moves.length)
-    randomMovesArr.forEach(async (v, i) => {
-        const response = await fetch(
-            pokemon.moves[v].move.url
-        )
-        const pkdata = await response.json()
-        moveLibs[`pokemon${id}Moves`].push({name: pkdata.name, power: pkdata.power})
-    })
-
-    setTimeout(() => {
-        localStorage.setItem('moves', JSON.stringify(moveLibs))
-    }, 2000)
-}
-
-
-function toNextPage(){
-    const moves = JSON.parse(localStorage.getItem('moves'))
-    console.log(moves);
-}
-
-document.getElementById('nextpg').addEventListener('click', () => toNextPage())
