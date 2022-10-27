@@ -11,6 +11,12 @@ let slot3Filled = false
 let slot4Filled = false
 let slot5Filled = false
 let slot6Filled = false
+let ChosenPokemon1 = 0
+let ChosenPokemon2 = 0
+let ChosenPokemon3 = 0
+let ChosenPokemon4 = 0
+let ChosenPokemon5 = 0
+let ChosenPokemon6 = 0
 // all the query selectors so i dont have them scattered around my code
 let nameSlot1 = document.querySelector("#nameSlot1")
 let imgSlot1 = document.querySelector("#imgSlot1")
@@ -128,7 +134,7 @@ if(name.includes(input.value)){
 // event listeners for choosing pokemon
 setter.forEach(setter => {
   setter.addEventListener('click',async (event)=>{
-    let supertest = ""
+    let supertest = 0
     if ((event.target.id === "nameSlot1")||(event.target.id === "imgSlot1")){
         supertest = slot1Num
     }
@@ -155,31 +161,37 @@ setter.forEach(setter => {
     if (slot1Filled === false){
         chosenName1.innerText = data.name
         chosenImg1.src = data.sprites.front_default
-    slot1Filled = true
+        ChosenPokemon1 = supertest
+        slot1Filled = true
     }
     else if(slot2Filled === false){
         chosenName2.innerText = data.name
         chosenImg2.src = data.sprites.front_default
+        ChosenPokemon2 = supertest
         slot2Filled = true
     }
     else if(slot3Filled === false){
         chosenName3.innerText = data.name
         chosenImg3.src = data.sprites.front_default
+        ChosenPokemon3 = supertest
         slot3Filled = true
     }
     else if(slot4Filled === false){
         chosenName4.innerText = data.name
         chosenImg4.src = data.sprites.front_default
+        ChosenPokemon4 = supertest
         slot4Filled = true
     }
     else if(slot5Filled === false){
         chosenName5.innerText = data.name
         chosenImg5.src = data.sprites.front_default
+        ChosenPokemon5 = supertest
         slot5Filled = true
     }
     else if(slot6Filled === false){
         chosenName6.innerText = data.name
         chosenImg6.src = data.sprites.front_default
+        ChosenPokemon6 = supertest
         slot6Filled = true
     }
   });
@@ -207,6 +219,33 @@ chosenImg5.src = ""
 chosenName6.innerText = ""
 chosenImg6.src = ""
 })
+
+
+//planned but unfinished
+// wipe.forEach(wipe => {
+//     wipe.addEventListener('click',async (event)=>{
+//         if ((event.target.id === "chosenName1")||(event.target.id === "chosenImg1")){
+//             chosenImg1.src = ""
+//             chosenName1.innerText = ""
+//         }
+//         else if ((event.target.id === "chosenName2")||(event.target.id === "chosenImg2")){
+//             supertest = slot2Num
+//         }
+//         else if ((event.target.id === "chosenName3")||(event.target.id === "ichosenImg3")){
+//             supertest = slot3Num
+//         }
+//         else if ((event.target.id === "chosenName4")||(event.target.id === "chosenImg4")){
+//             supertest = slot4Num
+//         }
+//         else if ((event.target.id === "chosenName5")||(event.target.id === "chosenImg5")){
+//             supertest = slot5Num
+//         }
+//         else if ((event.target.id === "chosenName6")||(event.target.id === "chosenImg6")){
+//             supertest = slot6Num
+//         }
+//     })
+// })
+
 // // grabs the button and opens a event listener for da clickety clack
 // document.querySelector("button").addEventListener("click",async()=>{
 //     // const response = await fetch(
