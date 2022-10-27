@@ -12,31 +12,32 @@ let slot4Filled = false
 let slot5Filled = false
 let slot6Filled = false
 // all the query selectors so i dont have them scattered around my code
-nameSlot1 = document.querySelector("#nameSlot1")
-imgSlot1 = document.querySelector("#imgSlot1")
-nameSlot2 = document.querySelector("#nameSlot2")
-imgSlot2 = document.querySelector("#imgSlot2")
-nameSlot3 = document.querySelector("#nameSlot3")
-imgSlot3 = document.querySelector("#imgSlot3")
-nameSlot4 = document.querySelector("#nameSlot4")
-imgSlot4 = document.querySelector("#imgSlot4")
-nameSlot5 = document.querySelector("#nameSlot5")
-imgSlot5 = document.querySelector("#imgSlot5")
-nameSlot6 = document.querySelector("#nameSlot6")
-imgSlot6 = document.querySelector("#imgSlot6")
-input = document.querySelector("input")
-chosenName1 = document.querySelector("#chosenName1")
-chosenImg1 = document.querySelector("#chosenImg1")
-chosenName2 = document.querySelector("#chosenName2")
-chosenImg2 = document.querySelector("#chosenImg2")
-chosenName3 = document.querySelector("#chosenName3")
-chosenImg3 = document.querySelector("#chosenImg3")
-chosenName4 = document.querySelector("#chosenName4")
-chosenImg4 = document.querySelector("#chosenImg4")
-chosenName5 = document.querySelector("#chosenName5")
-chosenImg5 = document.querySelector("#chosenImg5")
-chosenName6 = document.querySelector("#chosenName6")
-chosenImg6 = document.querySelector("#chosenImg6")
+let nameSlot1 = document.querySelector("#nameSlot1")
+let imgSlot1 = document.querySelector("#imgSlot1")
+let nameSlot2 = document.querySelector("#nameSlot2")
+let imgSlot2 = document.querySelector("#imgSlot2")
+let nameSlot3 = document.querySelector("#nameSlot3")
+let imgSlot3 = document.querySelector("#imgSlot3")
+let nameSlot4 = document.querySelector("#nameSlot4")
+let imgSlot4 = document.querySelector("#imgSlot4")
+let nameSlot5 = document.querySelector("#nameSlot5")
+let imgSlot5 = document.querySelector("#imgSlot5")
+let nameSlot6 = document.querySelector("#nameSlot6")
+let imgSlot6 = document.querySelector("#imgSlot6")
+let input = document.querySelector("input")
+let chosenName1 = document.querySelector("#chosenName1")
+let chosenImg1 = document.querySelector("#chosenImg1")
+let chosenName2 = document.querySelector("#chosenName2")
+let chosenImg2 = document.querySelector("#chosenImg2")
+let chosenName3 = document.querySelector("#chosenName3")
+let chosenImg3 = document.querySelector("#chosenImg3")
+let chosenName4 = document.querySelector("#chosenName4")
+let chosenImg4 = document.querySelector("#chosenImg4")
+let chosenName5 = document.querySelector("#chosenName5")
+let chosenImg5 = document.querySelector("#chosenImg5")
+let chosenName6 = document.querySelector("#chosenName6")
+let chosenImg6 = document.querySelector("#chosenImg6")
+let setter = document.querySelectorAll('.setter');
 
 // function deals with what happens when the searchbar has data entered, as indicative of its name
 async function searchbarBeSearched(){
@@ -124,8 +125,7 @@ if(name.includes(input.value)){
     }
 }
 
-const setter = document.querySelectorAll('.setter');
-
+// event listeners for choosing pokemon
 setter.forEach(setter => {
   setter.addEventListener('click',async (event)=>{
     let supertest = ""
@@ -207,7 +207,6 @@ chosenImg5.src = ""
 chosenName6.innerText = ""
 chosenImg6.src = ""
 })
-
 // // grabs the button and opens a event listener for da clickety clack
 // document.querySelector("button").addEventListener("click",async()=>{
 //     // const response = await fetch(
