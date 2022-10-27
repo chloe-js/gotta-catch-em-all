@@ -17,6 +17,19 @@ let ChosenPokemon3 = 0
 let ChosenPokemon4 = 0
 let ChosenPokemon5 = 0
 let ChosenPokemon6 = 0
+let ChosenType1 = 0
+let ChosenType2 = 0
+let ChosenType3 = 0
+let ChosenType4 = 0
+let ChosenType5 = 0
+let ChosenType6 = 0
+const allTypes = ['fire', 'water', 'grass', 
+        'electric', 'rock', 'ground', 
+        'ghost', 'bug', 'fighting', 
+        'psychic', 'flying', 'normal', 
+        'dark', 'steel', 'dragon', 
+        'ice', 'fairy', 'poison'
+    ];
 // all the query selectors so i dont have them scattered around my code
 let nameSlot1 = document.querySelector("#nameSlot1")
 let imgSlot1 = document.querySelector("#imgSlot1")
@@ -43,7 +56,14 @@ let chosenName5 = document.querySelector("#chosenName5")
 let chosenImg5 = document.querySelector("#chosenImg5")
 let chosenName6 = document.querySelector("#chosenName6")
 let chosenImg6 = document.querySelector("#chosenImg6")
-let setter = document.querySelectorAll('.setter');
+let setter = document.querySelectorAll(".setter");
+let wipe = document.querySelectorAll(".wipe")
+let div1 = document.querySelector("#div1")
+let div2 = document.querySelector("#div2")
+let div3 = document.querySelector("#div3")
+let div4 = document.querySelector("#div4")
+let div5 = document.querySelector("#div5")
+let div6 = document.querySelector("#div6")
 
 // function deals with what happens when the searchbar has data entered, as indicative of its name
 async function searchbarBeSearched(){
@@ -162,36 +182,49 @@ setter.forEach(setter => {
         chosenName1.innerText = data.name
         chosenImg1.src = data.sprites.front_default
         ChosenPokemon1 = supertest
+        ChosenType1 = data['types'][0]["type"]["name"]
+        div1.classList.add(ChosenType1);
+        
         slot1Filled = true
     }
     else if(slot2Filled === false){
         chosenName2.innerText = data.name
         chosenImg2.src = data.sprites.front_default
         ChosenPokemon2 = supertest
+        ChosenType2 = data['types'][0]["type"]["name"]
+        div2.classList.add(ChosenType2);
         slot2Filled = true
     }
     else if(slot3Filled === false){
         chosenName3.innerText = data.name
         chosenImg3.src = data.sprites.front_default
         ChosenPokemon3 = supertest
+        ChosenType3 = data['types'][0]["type"]["name"]
+        div3.classList.add(ChosenType3);
         slot3Filled = true
     }
     else if(slot4Filled === false){
         chosenName4.innerText = data.name
         chosenImg4.src = data.sprites.front_default
         ChosenPokemon4 = supertest
+        ChosenType4 = data['types'][0]["type"]["name"]
+        div4.classList.add(ChosenType4);
         slot4Filled = true
     }
     else if(slot5Filled === false){
         chosenName5.innerText = data.name
         chosenImg5.src = data.sprites.front_default
         ChosenPokemon5 = supertest
+        ChosenType5 = data['types'][0]["type"]["name"]
+        div5.classList.add(ChosenType5);
         slot5Filled = true
     }
     else if(slot6Filled === false){
         chosenName6.innerText = data.name
         chosenImg6.src = data.sprites.front_default
         ChosenPokemon6 = supertest
+        ChosenType6 = data['types'][0]["type"]["name"]
+        div6.classList.add(ChosenType6);
         slot6Filled = true
     }
   });
@@ -222,29 +255,46 @@ chosenImg6.src = ""
 
 
 //planned but unfinished
-// wipe.forEach(wipe => {
-//     wipe.addEventListener('click',async (event)=>{
-//         if ((event.target.id === "chosenName1")||(event.target.id === "chosenImg1")){
-//             chosenImg1.src = ""
-//             chosenName1.innerText = ""
-//         }
-//         else if ((event.target.id === "chosenName2")||(event.target.id === "chosenImg2")){
-//             supertest = slot2Num
-//         }
-//         else if ((event.target.id === "chosenName3")||(event.target.id === "ichosenImg3")){
-//             supertest = slot3Num
-//         }
-//         else if ((event.target.id === "chosenName4")||(event.target.id === "chosenImg4")){
-//             supertest = slot4Num
-//         }
-//         else if ((event.target.id === "chosenName5")||(event.target.id === "chosenImg5")){
-//             supertest = slot5Num
-//         }
-//         else if ((event.target.id === "chosenName6")||(event.target.id === "chosenImg6")){
-//             supertest = slot6Num
-//         }
-//     })
-// })
+wipe.forEach(wipe => {
+    wipe.addEventListener('click',async (event)=>{
+        if ((event.target.id === "chosenName1")||(event.target.id === "chosenImg1")){
+            chosenImg1.src = ""
+            chosenName1.innerText = ""
+            div1.classList.remove(ChosenType1)
+            slot1Filled = false
+        }
+        else if ((event.target.id === "chosenName2")||(event.target.id === "chosenImg2")){
+            chosenImg2.src = ""
+            chosenName2.innerText = ""
+            div2.classList.remove(ChosenType2)
+            slot2Filled = false
+        }
+        else if ((event.target.id === "chosenName3")||(event.target.id === "ichosenImg3")){
+            chosenImg3.src = ""
+            chosenName3.innerText = ""
+            div1.classList.remove(ChosenType3)
+            slot3Filled = false
+        }
+        else if ((event.target.id === "chosenName4")||(event.target.id === "chosenImg4")){
+            chosenImg4.src = ""
+            chosenName4.innerText = ""
+            div1.classList.remove(ChosenType4)
+            slot4Filled = false
+        }
+        else if ((event.target.id === "chosenName5")||(event.target.id === "chosenImg5")){
+            chosenImg5.src = ""
+            chosenName5.innerText = ""
+            div1.classList.remove(ChosenType5)
+            slot5Filled = false
+        }
+        else if ((event.target.id === "chosenName6")||(event.target.id === "chosenImg6")){
+            chosenImg6.src = ""
+            chosenName6.innerText = ""
+            div1.classList.remove(ChosenType6)
+            slot6Filled = false
+        }
+    })
+})
 
 // // grabs the button and opens a event listener for da clickety clack
 // document.querySelector("button").addEventListener("click",async()=>{
