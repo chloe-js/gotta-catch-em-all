@@ -1,0 +1,34 @@
+body{
+  min-height: 100vh;
+  background-color: lightgoldenrodyellow;
+}
+
+.bigContainer{
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid{
+  display: grid;
+  grid: repeat(3,1fr)/ repeat(3,1fr);
+  height: 90vh;
+  width: 90vw;
+  background-image: url(https://th.bing.com/th/id/OIP.IP4eFD6huxdaIDWx0YDjmAHaDz?w=316&h=179&c=7&r=0&o=5&dpr=1.3&pid=1.7);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.userPokemon{
+  transform: translateX(70%);
+  grid-area: 3/1;
+}
+.opponentPokemon{
+  transform: translateY(130%) translateX(1%);
+  grid-area: 1/3;
+}
