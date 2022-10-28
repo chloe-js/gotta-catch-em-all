@@ -58,6 +58,15 @@ header a:hover {
   background-color: transparent;
 }
 
+header audio{
+  align-self: center;
+}
+
+
+audio::-webkit-media-controls-panel {
+  background-color: darkgray;
+}
+
 @keyframes type {
   from {
       width: 0;
