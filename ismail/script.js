@@ -162,27 +162,21 @@ setter.forEach(setter => {
     setter.addEventListener('click', async (event) => {
         let supertest = 0
         if ((event.target.id === "nameSlot1") || (event.target.id === "imgSlot1")) {
-            console.log('SLOT 1');
             supertest = slot1Num
         }
         else if ((event.target.id === "nameSlot2") || (event.target.id === "imgSlot2")) {
-            console.log('SLOT 2');
             supertest = slot2Num
         }
         else if ((event.target.id === "nameSlot3") || (event.target.id === "imgSlot3")) {
-            console.log('SLOT 3');
             supertest = slot3Num
         }
         else if ((event.target.id === "nameSlot4") || (event.target.id === "imgSlot4")) {
-            console.log('SLOT 4');
             supertest = slot4Num
         }
         else if ((event.target.id === "nameSlot5") || (event.target.id === "imgSlot5")) {
-            console.log('SLOT 5');
             supertest = slot5Num
         }
         else if ((event.target.id === "nameSlot6") || (event.target.id === "imgSlot6")) {
-            console.log('SLOT 6');
             supertest = slot6Num
         }
         const response = await fetch(
@@ -543,23 +537,29 @@ const pcPokemon = {
     pk1hp: 200,
 }
 
+//LINK - HP
+
 playerButtonObject['player0Ref'].addEventListener('click', () => battle())
 playerButtonObject['player1Ref'].addEventListener('click', () => battle())
 playerButtonObject['player2Ref'].addEventListener('click', () => battle())
 playerButtonObject['player3Ref'].addEventListener('click', () => battle())
 
-const getRdn = () => Math.floor(Math.random() * 20 + 1);
+const getRdn = () => Math.floor(Math.random() * 50 + 1);
 
 function battle() {
-    if (Number(hpComputer.textContent) <= 0) {
-        hpPlayer1.textContent = 'Winner'
-        hpComputer.textContent = 'Fainted'
-    } else if(Number(hpPlayer1.textContent) <= 0) {
+    if (Number(hpPlayer0.textContent) - getRdn() <= 0) {
         hpComputer.textContent = 'Winner'
-        hpPlayer1.textContent = 'Fainted'
-    } else {
-        hpPlayer1.textContent = Number(hpPlayer1.textContent) - getRdn()
+        hpPlayer0.textContent = 'Fainted'
+    }
+    if (Number(hpComputer.textContent) - getRdn() <= 0){
+        hpPlayer0.textContent = 'Winner'
+        hpComputer.textContent = 'Fainted'
+    }
+    if(Number(hpComputer.textContent) - getRdn() > 0){
         hpComputer.textContent = Number(hpComputer.textContent) - getRdn()
+    }
+    if(Number(hpPlayer0.textContent) - getRdn() > 0){
+        hpPlayer0.textContent = Number(hpPlayer0.textContent) - getRdn()
     }
 }
 
@@ -649,7 +649,6 @@ async function genComputerPkmon() {
     const moves = Move.retrieveMovesOfPCPokemon(data, 0)
     setTimeout(async () => {
         const attack = await moves
-        console.log(attack);
         computerMove0.value = attack[`pokemon${0}Moves`][0].name
         computerMove1.value = attack[`pokemon${0}Moves`][1].name
         computerMove2.value = attack[`pokemon${0}Moves`][2].name

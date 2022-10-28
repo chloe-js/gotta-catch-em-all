@@ -25,10 +25,7 @@ const movePCLibs = {
 }
 
 export function retrieveMovesOfSelectedPokemon(pokemon, id) {
-    console.log(pokemon, '-pk');
-    console.log(id, '-id');
     const randomMovesArr = deliverRandomMove(pokemon.moves.length)
-    console.log(randomMovesArr);
     randomMovesArr.forEach(async (v) => {
         const response = await fetch(
             pokemon.moves[v].move.url
