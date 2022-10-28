@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="pokemon-frontend.css">
-    <title>Pokemon selector</title>
+    <title>jeffreys Pokemon selector</title>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
         <div class="search-and-results">
             <div class="search-container" id="search-cont">
                 <h2>Search for a pokemon here</h2>
-                <input type="text" onkeyup="searchbarBeSearched()">
+                <input type="text" id="searchBar">
                 <button id="resetBtn">reset</button>
             </div>
         </div>
@@ -100,20 +100,40 @@
             <h1 id="Begin">Battle Mode</h1>
             <div class="bigContainer">
                 <div class="grid">
-                    <div class="userPokemon">
-                        <div id="pk1"></div>
-                        <div id="hp1"></div>
-                        <input type="button" class="btn" id="m0">
-                        <input type="button" class="btn" id="m1">
-                        <input type="button" class="btn" id="m2">
-                        <input type="button" class="btn" id="m3">
-                    </div>
+                  <h2 class="player1">player1</h2>
 
+                  <!-- chloes code -->
+                    <div class="poke1">
+    <h3 class="x"
+      id="chosenPlayer2"></h3>
+    <h3 class="z"
+      id="hpPlayer2"></h3>
 
-                    <div class="opponentPokemon">
-                        <div id="pk2"></div>
-                        <div id="hp2"></div>
-                    </div>
+    <img class="y"
+      id="playerImg2"
+      src=""
+      alt="">
+  
+    <!-- Player 2 moves -->
+    <input type="button"
+      class="btn"
+      id="player2move0"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player2move1"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player2move2"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player2move3"
+      value="">
+  </div>
+  <!-- end of chloes code -->
+
                 </div>
             </div>
         </footer>
