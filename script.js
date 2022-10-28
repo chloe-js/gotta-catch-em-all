@@ -251,6 +251,12 @@ chosenName5.innerText = ""
 chosenImg5.src = ""
 chosenName6.innerText = ""
 chosenImg6.src = ""
+div1.classList.remove(ChosenType1)
+div2.classList.remove(ChosenType2)
+div1.classList.remove(ChosenType3)
+div1.classList.remove(ChosenType4)
+div1.classList.remove(ChosenType5)
+div1.classList.remove(ChosenType6)
 })
 
 
