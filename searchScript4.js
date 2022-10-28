@@ -320,17 +320,17 @@ async function populate(params, id) {
     // }
 
         // second selection
-        if (id === 2) {
-            computerImg1.setAttribute('src', params.sprites.front_default)
-            hpComputer.textContent = `health: /1000`
-            const moves = Move.retrieveMovesOfSelectedPokemon(params, id)
-            setTimeout(() => {
-                computerPlayer.textContent = `${params.name} - ${types} type`
-                // for (let i = 0; i < 4; i++) {
-                //     pl2BtnRefs[`player2move${i}`].value = `${moves[`pokemon${id}Moves`][i].name}`
-                // }
-            }, 200)
-        }
+        // if (id === 2) {
+        //     computerImg1.setAttribute('src', params.sprites.front_default)
+        //     hpComputer.textContent = `health: /1000`
+        //     const moves = Move.retrieveMovesOfSelectedPokemon(params, id)
+        //     setTimeout(() => {
+        //         computerPlayer.textContent = `${params.name} - ${types} type`
+        //         // for (let i = 0; i < 4; i++) {
+        //         //     pl2BtnRefs[`player2move${i}`].value = `${moves[`pokemon${id}Moves`][i].name}`
+        //         // }
+        //     }, 200)
+        // }
 
 
     /////PLAYER MOVES
@@ -353,17 +353,17 @@ async function populate(params, id) {
         // playerImg1.setAttribute('src', params.sprites.front_default)
     }
     // second selection
-    // if (id === 2) {
-    //     playerImg2.setAttribute('src', params.sprites.back_default)
-    //     hpPlayer2.textContent = `health: /200`
-    //     const moves = Move.retrieveMovesOfSelectedPokemon(params, id)
-    //     setTimeout(() => {
-    //         chosenPlayer2.textContent = `${params.name} - ${types} type`
-    //         for (let i = 0; i < 4; i++) {
-    //             pl2BtnRefs[`player2move${i}`].value = `${moves[`pokemon${id}Moves`][i].name}`
-    //         }
-    //     }, 200)
-    // }
+    if (id === 2) {
+        playerImg2.setAttribute('src', params.sprites.front_default)
+        hpPlayer2.textContent = `health: /200`
+        const moves = Move.retrieveMovesOfSelectedPokemon(params, id)
+        setTimeout(() => {
+            chosenPlayer2.textContent = `${params.name} - ${types} type`
+            for (let i = 0; i < 4; i++) {
+                pl2BtnRefs[`player2move${i}`].value = `${moves[`pokemon${id}Moves`][i].name}`
+            }
+        }, 200)
+    }
     // // third selection
     // if (id === 3) {
     //     playerImg3.setAttribute('src', params.sprites.back_default)
