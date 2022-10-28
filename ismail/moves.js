@@ -19,6 +19,11 @@ const moveLibs = {
     pokemon5Moves: [],
 }
 
+
+const movePCLibs = {
+    pokemon0Moves: [],
+}
+
 export function retrieveMovesOfSelectedPokemon(pokemon, id) {
     console.log(pokemon, '-pk');
     console.log(id, '-id');
@@ -33,6 +38,19 @@ export function retrieveMovesOfSelectedPokemon(pokemon, id) {
     })
     return moveLibs
 }
+
+export async function retrieveMovesOfPCPokemon(pokemon, id) {
+    for (let x = 0; x < 4; x++) {
+        const response = await fetch(
+            pokemon.moves[x].move.url
+        )
+        const pkdata = await response.json()
+        movePCLibs[`pokemon${id}Moves`].push({ name: pkdata.name, power: pkdata.power })
+    }
+
+    return movePCLibs
+}
+
 
 
 

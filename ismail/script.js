@@ -592,58 +592,36 @@ async function getChosenCharacters() {
         playerButtonObject[`player${21}Ref`].value = `${moves[`pokemon${5}Moves`][1].name}`
         playerButtonObject[`player${22}Ref`].value = `${moves[`pokemon${5}Moves`][2].name}`
         playerButtonObject[`player${23}Ref`].value = `${moves[`pokemon${5}Moves`][3].name}`
+        genComputerPkmon()
     }, 2000)
-
 }
 
+const computerImg1 = document.getElementById('computerImg1')
+const computerPlayer = document.getElementById('computerPlayer')
+const hpComputer = document.getElementById('hpComputer')
+const computerMove0 = document.getElementById('computerMove0')
+const computerMove1 = document.getElementById('computerMove1')
+const computerMove2 = document.getElementById('computerMove2')
+const computerMove3 = document.getElementById('computerMove3')
 
+async function genComputerPkmon(){
+    const rdmNum = Math.floor(Math.random() * 150 + 1)
+    const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon/${rdmNum}`
+    )
+    const data = await response.json()
+    computerImg1.setAttribute('src', data.sprites.front_default)
+    computerPlayer.textContent = data.name
+    hpComputer.textContent = '/200'
 
+    const moves = Move.retrieveMovesOfPCPokemon(data, 0)
+    setTimeout(async () => {
+        const attack = await moves
+        console.log(attack);
+        computerMove0.value = attack[`pokemon${0}Moves`][0].name
+        computerMove1.value = attack[`pokemon${0}Moves`][1].name
+        computerMove2.value = attack[`pokemon${0}Moves`][2].name 
+        computerMove3.value = attack[`pokemon${0}Moves`][3].name 
+    }, 1000)
 
-// setTimeout(() => {
-//     let inc = 0
-//     for (const player in playerButtonObject) {
-//         // console.log('%c I ', 'background: red; color: white;', inc);
-//         // console.log('%c inc ', 'background: blue; color: white;', inc);
-//         // if(inc === 0){
-//         // console.log(playerButtonObject[`player${inc}Ref`])
-//         // let arr = []
-//         //     for (let j = 0; j < 4; j++) {
-//         //         // console.log(moves[`pokemon${characterIndex}Moves`][j].name);
-//         //     }
-//         // }
-//         let th = 0
-//         for(let i = 0; i < 4; i++){
-//             console.log(characterIndex);
-//             playerButtonObject[`player${i}Ref`].value = `${moves[`pokemon${characterIndex}Moves`][th].name}`
-//             th += 1
-//         }
-//         th = 0
-//         for(let i = 4; i < 8; i++){
-//             console.log(characterIndex);
-//             playerButtonObject[`player${i}Ref`].value = `${moves[`pokemon${characterIndex}Moves`][th].name}`
-//             th += 1
-//         }
-//         th = 0
-//         for(let i = 8; i < 12; i++){
-//             console.log(characterIndex);
-//             playerButtonObject[`player${i}Ref`].value = `${moves[`pokemon${characterIndex}Moves`][th].name}`
-//             th += 1
-//         }
-//         th = 0
-//         for(let i = 12; i < 16; i++){
-//             playerButtonObject[`player${i}Ref`].value = `${moves[`pokemon${characterIndex}Moves`][th].name}`
-//             th += 1
-//         }
-//         th = 0
-//         for(let i = 16; i < 20; i++){
-//             playerButtonObject[`player${i}Ref`].value = `${moves[`pokemon${characterIndex}Moves`][th].name}`
-//             th += 1
-//         }
-//         th = 0
-//         for(let i = 20; i < 24; i++){
-//             playerButtonObject[`player${i}Ref`].value = `${moves[`pokemon${characterIndex}Moves`][th].name}`
-//             th += 1
-//         }
-//         inc += 1
-//     }
-// }, 2000)
+}
