@@ -275,7 +275,7 @@ wipe.forEach(wipe => {
             div2.classList.remove(ChosenType2)
             slot2Filled = false
         }
-        else if ((event.target.id === "chosenName3")||(event.target.id === "ichosenImg3")){
+        else if ((event.target.id === "chosenName3")||(event.target.id === "chosenImg3")){
             chosenImg3.src = ""
             chosenName3.innerText = ""
             div1.classList.remove(ChosenType3)
@@ -301,6 +301,18 @@ wipe.forEach(wipe => {
         }
     })
 })
+
+// async function tests(){
+// const response = await fetch(
+//     `https://pokeapi.co/api/v2/pokemon/${1}`
+// )
+// let data = await response.json()
+// let moveUrl = data['moves'][0]["move"]["url"]
+// const deeperResponse = await fetch(moveUrl)
+// let deeperData = await deeperResponse.json()
+// console.log(deeperData["power"])
+// }
+// tests()
 
 // // grabs the button and opens a event listener for da clickety clack
 // document.querySelector("button").addEventListener("click",async()=>{
