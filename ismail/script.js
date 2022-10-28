@@ -289,7 +289,7 @@ wipe.forEach(wipe => {
             div2.classList.remove(ChosenType2)
             slot2Filled = false
         }
-        else if ((event.target.id === "chosenName3") || (event.target.id === "ichosenImg3")) {
+        else if ((event.target.id === "chosenName3") || (event.target.id === "chosenImg3")) {
             chosenImg3.src = ""
             chosenName3.innerText = ""
             div1.classList.remove(ChosenType3)
@@ -360,7 +360,7 @@ async function populate(params, id) {
 
     // if (id === 6) {
     //     computerImg1.setAttribute('src', params.sprites.front_default)
-    //     hpComputer.textContent = `health: /1000`
+    //     hpComputer.textContent = `1000`
     //     // const moves = Move.retrieveMovesOfSelectedPokemon(params, id)
     //     setTimeout(() => {
     //         computerPlayer.textContent = `${params.name} - ${types} type`
@@ -377,7 +377,7 @@ async function populate(params, id) {
     // if (id === 1) {
     //     //first selection
     //     playerImg1.setAttribute('src', params.sprites.back_default)
-    //     hpPlayer1.textContent = `health: /200`
+    //     hpPlayer1.textContent = `200`
     //     // chosenPlayer1.textContent = `${params.name} - ${types} type`
     //     // const moves = Move.retrieveMovesOfSelectedPokemon(params, id)
     //     setTimeout(() => {
@@ -393,7 +393,7 @@ async function populate(params, id) {
     // // second selection
     // if (id === 2) {
     //     playerImg2.setAttribute('src', params.sprites.back_default)
-    //     hpPlayer2.textContent = `health: /200`
+    //     hpPlayer2.textContent = `200`
     //     // const moves = Move.retrieveMovesOfSelectedPokemon(params, id)
     //     setTimeout(() => {
     //         chosenPlayer2.textContent = `${params.name} - ${types} type`
@@ -405,7 +405,7 @@ async function populate(params, id) {
     // // third selection
     // if (id === 3) {
     //     playerImg3.setAttribute('src', params.sprites.back_default)
-    //     hpPlayer3.textContent = `health: /200`
+    //     hpPlayer3.textContent = `200`
     //     // const moves = Move.retrieveMovesOfSelectedPokemon(params, id)
     //     setTimeout(() => {
     //         chosenPlayer3.textContent = `${params.name} - ${types} type`
@@ -417,7 +417,7 @@ async function populate(params, id) {
     // // fourth selection
     // if (id === 4) {
     //     playerImg4.setAttribute('src', params.sprites.back_default)
-    //     hpPlayer4.textContent = `health: /200`
+    //     hpPlayer4.textContent = `200`
     //     // const moves = Move.retrieveMovesOfSelectedPokemon(params, id)
     //     setTimeout(() => {
     //         chosenPlayer4.textContent = `${params.name} - ${types} type`
@@ -429,7 +429,7 @@ async function populate(params, id) {
     // // fifth selection
     // if (id === 5) {
     //     playerImg5.setAttribute('src', params.sprites.back_default)
-    //     hpPlayer5.textContent = `health: /200`
+    //     hpPlayer5.textContent = `200`
     //     // const moves = Move.retrieveMovesOfSelectedPokemon(params, id)
     //     setTimeout(() => {
     //         chosenPlayer5.textContent = `${params.name} - ${types} type`
@@ -442,7 +442,7 @@ async function populate(params, id) {
     // sixth selection  
     // if (id === 6) {
     //     playerImg6.setAttribute('src', params.sprites.back_default)
-    // hpPlayer6.textContent = `health: /200`
+    // hpPlayer6.textContent = `200`
 
     // const moves = Move.retrieveMovesOfSelectedPokemon(params, id)
     //     setTimeout(() => {
@@ -531,6 +531,38 @@ const playerButtonObject = {
 
 document.getElementById('btn-show').addEventListener('click', () => getChosenCharacters())
 
+const playersPokemon = {
+    pk1hp: 200,
+    pk2hp: 200,
+    pk3hp: 200,
+    pk4hp: 200,
+    pk5hp: 200,
+    pk6hp: 200,
+}
+const pcPokemon = {
+    pk1hp: 200,
+}
+
+playerButtonObject['player0Ref'].addEventListener('click', () => battle())
+playerButtonObject['player1Ref'].addEventListener('click', () => battle())
+playerButtonObject['player2Ref'].addEventListener('click', () => battle())
+playerButtonObject['player3Ref'].addEventListener('click', () => battle())
+
+const getRdn = () => Math.floor(Math.random() * 20 + 1);
+
+function battle() {
+    if (Number(hpComputer.textContent) <= 0) {
+        hpPlayer1.textContent = 'Winner'
+        hpComputer.textContent = 'Fainted'
+    } else if(Number(hpPlayer1.textContent) <= 0) {
+        hpComputer.textContent = 'Winner'
+        hpPlayer1.textContent = 'Fainted'
+    } else {
+        hpPlayer1.textContent = Number(hpPlayer1.textContent) - getRdn()
+        hpComputer.textContent = Number(hpComputer.textContent) - getRdn()
+    }
+}
+
 async function getChosenCharacters() {
     const characters = [
         chosenName1.textContent,
@@ -553,7 +585,7 @@ async function getChosenCharacters() {
         const playerHpRef = document.querySelector(`#hpPlayer${characterIndex}`)
         const playerNameRef = document.querySelector(`#chosenPlayer${characterIndex}`)
         playerImgRef.setAttribute('src', data.sprites.back_default)
-        playerHpRef.textContent = `health: /200`
+        playerHpRef.textContent = `200`
         playerNameRef.textContent = `${data.name} - ${data.types[0].type.name} type`
         // console.log(playerImgRef);
         moves = Move.retrieveMovesOfSelectedPokemon(data, characterIndex)
@@ -604,15 +636,15 @@ const computerMove1 = document.getElementById('computerMove1')
 const computerMove2 = document.getElementById('computerMove2')
 const computerMove3 = document.getElementById('computerMove3')
 
-async function genComputerPkmon(){
+async function genComputerPkmon() {
     const rdmNum = Math.floor(Math.random() * 150 + 1)
     const response = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${rdmNum}`
     )
     const data = await response.json()
     computerImg1.setAttribute('src', data.sprites.front_default)
-    computerPlayer.textContent = data.name
-    hpComputer.textContent = '/200'
+    computerPlayer.textContent = `${data.name} - ${data.types[0].type.name} type`
+    hpComputer.textContent = `200`
 
     const moves = Move.retrieveMovesOfPCPokemon(data, 0)
     setTimeout(async () => {
@@ -620,8 +652,8 @@ async function genComputerPkmon(){
         console.log(attack);
         computerMove0.value = attack[`pokemon${0}Moves`][0].name
         computerMove1.value = attack[`pokemon${0}Moves`][1].name
-        computerMove2.value = attack[`pokemon${0}Moves`][2].name 
-        computerMove3.value = attack[`pokemon${0}Moves`][3].name 
+        computerMove2.value = attack[`pokemon${0}Moves`][2].name
+        computerMove3.value = attack[`pokemon${0}Moves`][3].name
     }, 1000)
 
 }
