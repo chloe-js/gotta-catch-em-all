@@ -16,6 +16,15 @@ header{
   font-family: 'Press Start 2P';
 }
 
+header audio{
+  align-self: center;
+}
+
+
+audio::-webkit-media-controls-panel {
+  background-color: darkgray;
+}
+
 .h1container{
   display: inline-block;
 }
