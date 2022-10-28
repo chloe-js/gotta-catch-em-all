@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="./style.css">
+    <title>Pokemon selector</title>
+</head>
+
+<body>
+    <header>
+        <div class="mainContainer">
+            <div class="h1container">
+                <h1>Welcome to our pokemon project!</h1>
+            </div>
+            <a href="#search-cont">Start</a>
+        </div>
+    </header>
+    <main>
+        <div class="search-and-results">
+            <div class="search-container"
+                id="search-cont">
+                <h2>Search for a pokemon here</h2>
+                <!-- LINK -->
+                <input type="text"
+                    id="searchBar">
+                <button id="resetBtn">reset</button>
+            </div>
+        </div>
+
+        <div class="parallax"
+            id="parralax">
+            <div class="selectedItems">
+
+                <h2>These are your selected pokemon: </h2>
+                <div class="selectedItemsGrid">
+                    <div class="selectedPokemon1"
+                        id="div1">
+                        <h3 class="wipe"
+                            id="chosenName1"></h3>
+                        <img class="wipe"
+                            id="chosenImg1"
+                            src=""
+                            alt="">
+                    </div>
+                    <div class="selectedPokemon2"
+                        id="div2">
+                        <h3 id="chosenName2"></h3>
+                        <img class="wipe"
+                            id="chosenImg2"
+                            src=""
+                            alt="">
+                    </div>
+                    <div class="selectedPokemon3"
+                        id="div3">
+                        <h3 id="chosenName3"></h3>
+                        <img class="wipe"
+                            id="chosenImg3"
+                            src=""
+                            alt="">
+                    </div>
+                    <div class="selectedPokemon4"
+                        id="div4">
+                        <h3 id="chosenName4"></h3>
+                        <img class="wipe"
+                            id="chosenImg4"
+                            src=""
+                            alt="">
+                    </div>
+                    <div class="selelctedPokemon5"
+                        id="div5">
+                        <h3 id="chosenName5"></h3>
+                        <img class="wipe"
+                            id="chosenImg5"
+                            src=""
+                            alt="">
+                    </div>
+                    <div class="selectedPokemon6"
+                        id="div6">
+                        <h3 id="chosenName6"></h3>
+                        <img class="wipe"
+                            id="chosenImg6"
+                            src=""
+                            alt="">
+                    </div>
+                </div>
+                <button class="bttn2">Start battle</button>
+            </div>
+
+            <div class="cards">
+                <div class="chosenPokemon1">
+                    <h2 class="setter"
+                        id="nameSlot1"></h2>
+                    <img class="setter"
+                        id="imgSlot1"
+                        src=""
+                        alt="">
+                </div>
+                <div class="chosenPokemon2">
+                    <h2 class="setter"
+                        id="nameSlot2"></h2>
+                    <img class="setter"
+                        id="imgSlot2"
+                        src=""
+                        alt="">
+                </div>
+                <div class="chosenPokemon3">
+                    <h2 class="setter"
+                        id="nameSlot3"></h2>
+                    <img class="setter"
+                        id="imgSlot3"
+                        src=""
+                        alt="">
+                </div>
+                <div class="chosenPokemon4">
+                    <h2 class="setter"
+                        id="nameSlot4"></h2>
+                    <img class="setter"
+                        id="imgSlot4"
+                        src=""
+                        alt="">
+                </div>
+                <div class="chosenPokemon5">
+                    <h2 class="setter"
+                        id="nameSlot5"></h2>
+                    <img class="setter"
+                        id="imgSlot5"
+                        src=""
+                        alt="">
+                </div>
+                <div class="chosenPokemon6">
+                    <h2 class="setter"
+                        id="nameSlot6"></h2>
+                    <img class="setter"
+                        id="imgSlot6"
+                        src=""
+                        alt="">
+                </div>
+            </div>
+        </div>
+
+        <footer class="Battle-section">
+        <!-- LINK -->
+            <!-- COMPUTER POKEMON -->
+            <div>
+                <img class="b"
+                    id="computerImg1"
+                    src=""
+                    alt="">
+            </div>
+            <div>
+                <h3 class="a"
+                    id="computerPlayer"></h3>
+                <h3 class="z"
+                    id="hpComputer"></h3>
+            </div>
+            <div>
+                <input type="button"
+                    class="btn"
+                    id="computerMove0"
+                    value="">
+                <input type="button"
+                    class="btn"
+                    id="computerMove1"
+                    value="">
+                <input type="button"
+                    class="btn"
+                    id="computerMove2"
+                    value="">
+                <input type="button"
+                    class="btn"
+                    id="computerMove3"
+                    value="">
+            </div>
+
+            <!-- SELECTED POKEMON -->
+            <div>
+                <h3 class="x"
+                    id="chosenPlayer0"></h3>
+                <h3 class="z"
+                    id="hpPlayer0"></h3>
+            </div>
+            <div>
+                <img class="y"
+                    id="playerImg0"
+                    src=""
+                    alt="">
+            </div>
+            <div>
+                <input type="button"
+                    class="btn"
+                    id="playermove0"
+                    value="">
+                <input type="button"
+                    class="btn"
+                    id="playermove1"
+                    value="">
+                <input type="button"
+                    class="btn"
+                    id="playermove2"
+                    value="">
+                <input type="button"
+                    class="btn"
+                    id="playermove3"
+                    value="">
+            </div>
+
+               <div>
+            <h3 class="x"
+                id="chosenPlayer1"></h3>
+            <h3 class="z"
+                id="hpPlayer1"></h3>
+        </div>
+        <div>
+            <img class="y"
+                id="playerImg1"
+                src=""
+                alt="">
+        </div>
+        <div>
+            <input type="button"
+                class="btn"
+                id="playermove4"
+                value="">
+            <input type="button"
+                class="btn"
+                id="playermove5"
+                value="">
+            <input type="button"
+                class="btn"
+                id="playermove6"
+                value="">
+            <input type="button"
+                class="btn"
+                id="playermove7"
+                value="">
+        </div>
+
+            <div>
+            <h3 class="x"
+                id="chosenPlayer2"></h3>
+            <h3 class="z"
+                id="hpPlayer2"></h3>
+        </div>
+        <div>
+            <img class="y"
+                id="playerImg2"
+                src=""
+                alt="">
+        </div>
+        <div>
+            <input type="button"
+                class="btn"
+                id="playermove8"
+                value="">
+            <input type="button"
+                class="btn"
+                id="playermove9"
+                value="">
+            <input type="button"
+                class="btn"
+                id="playermove10"
+                value="">
+            <input type="button"
+                class="btn"
+                id="playermove11"
+                value="">
+        </div>
+
+        <div>
+            <h3 class="x"
+                id="chosenPlayer3"></h3>
+            <h3 class="z"
+                id="hpPlayer3"></h3>
+        </div>
+        <div>
+            <img class="y"
+                id="playerImg3"
+                src=""
+                alt="">
+        </div>
+        <div>
+            <input type="button"
+                class="btn"
+                id="playermove12"
+                value="">
+            <input type="button"
+                class="btn"
+                id="playermove13"
+                value="">
+            <input type="button"
+                class="btn"
+                id="playermove14"
+                value="">
+            <input type="button"
+                class="btn"
+                id="playermove15"
+                value="">
+        </div>
+
+        <div>
+            <h3 class="x"
+                id="chosenPlayer4"></h3>
+            <h3 class="z"
+                id="hpPlayer4"></h3>
+        </div>
+        <div>
+            <img class="y"
+                id="playerImg4"
+                src=""
+                alt="">
+        </div>
+        <div>
+            <input type="button"
+                class="btn"
+                id="playermove16"
+                value="">
+            <input type="button"
+                class="btn"
+                id="playermove17"
+                value="">
+            <input type="button"
+                class="btn"
+                id="playermove18"
+                value="">
+            <input type="button"
+                class="btn"
+                id="playermove19"
+                value="">
+        </div>
+
+        <div>
+            <h3 class="x"
+                id="chosenPlayer5"></h3>
+            <h3 class="z"
+                id="hpPlayer5"></h3>
+        </div>
+        <div>
+            <img class="y"
+                id="playerImg5"
+                src=""
+                alt="">
+        </div>
+        <div>
+            <input type="button"
+                class="btn"
+                id="playermove20"
+                value="">
+            <input type="button"
+                class="btn"
+                id="playermove21"
+                value="">
+            <input type="button"
+                class="btn"
+                id="playermove22"
+                value="">
+            <input type="button"
+                class="btn"
+                id="playermove23"
+                value="">
+        </div>
+            <button id="btn-show"
+                style="padding: 0.5rem 1.25rem">show</button> 
+              </footer>
+    </main>
+    <script type="module"
+        async
+        defer
+        src="./script.js"></script>
+</body>
+
+</html>

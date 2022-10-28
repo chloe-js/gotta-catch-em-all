@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible"
+    content="IE=edge" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0" />
+  <title>Pokemon33</title>
+</head>
+
+<body>
+  <input type="text"
+    id="searchBar">
+  <button></button>
+  <h2 class="setter"
+    id="nameSlot1"></h2>
+  <h2 class="setter"
+    id="nameSlot2"></h2>
+  <h2 class="setter"
+    id="nameSlot3"></h2>
+  <h2 class="setter"
+    id="nameSlot4"></h2>
+  <h2 class="setter"
+    id="nameSlot5"></h2>
+  <h2 class="setter"
+    id="nameSlot6"></h2>
+  <img class="setter"
+    id="imgSlot1"
+    src=""
+    alt="">
+  <img class="setter"
+    id="imgSlot2"
+    src=""
+    alt="">
+  <img class="setter"
+    id="imgSlot3"
+    src=""
+    alt="">
+  <img class="setter"
+    id="imgSlot4"
+    src=""
+    alt="">
+  <img class="setter"
+    id="imgSlot5"
+    src=""
+    alt="">
+  <img class="setter"
+    id="imgSlot6"
+    src=""
+    alt="">
+  <h3 class="wipe"
+    id="chosenName1"></h3>
+  <h3 class="wipe"
+    id="chosenName2"></h3>
+  <h3 class="wipe"
+    id="chosenName3"></h3>
+  <h3 class="wipe"
+    id="chosenName4"></h3>
+  <h3 class="wipe"
+    id="chosenName5"></h3>
+  <h3 class="wipe"
+    id="chosenName6"></h3>
+  <img class="wipe"
+    id="chosenImg1"
+    src=""
+    alt="">
+  <img class="wipe"
+    id="chosenImg2"
+    src=""
+    alt="">
+  <img class="wipe"
+    id="chosenImg3"
+    src=""
+    alt="">
+  <img class="wipe"
+    id="chosenImg4"
+    src=""
+    alt="">
+  <img class="wipe"
+    id="chosenImg5"
+    src=""
+    alt="">
+  <img class="wipe"
+    id="chosenImg6"
+    src=""
+    alt="">
+  <button id="nextpg">Play Game</button>
+  <!-- linking script.js with my HTML -->
+
+  <!-- COMPUTER POKEMON -->
+  <div>
+    <img class="b"
+      id="computerImg1"
+      src=""
+      alt="">
+  </div>
+  <div>
+    <h3 class="a"
+      id="computerPlayer"></h3>
+    <h3 class="z"
+      id="hpComputer"></h3>
+  </div>
+  <!-- COMPUTER moves -->
+  <!-- <div>
+    <input type="button"
+      class="btn"
+      id="computerMove0"
+      value="">
+    <input type="button"
+      class="btn"
+      id="computerMove1"
+      value="">
+    <input type="button"
+      class="btn"
+      id="computerMove2"
+      value="">
+    <input type="button"
+      class="btn"
+      id="computerMove3"
+      value="">
+  </div> -->
+
+  <!-- SELECTED POKEMON -->
+  <div>
+    <h3 class="x"
+      id="chosenPlayer1"></h3>
+    <h3 class="z"
+      id="hpPlayer1"></h3>
+  </div>
+  <div>
+    <img class="y"
+      id="playerImg1"
+      src=""
+      alt="">
+  </div>
+  <div>
+    <!-- Player 1 moves -->
+    <input type="button"
+      class="btn"
+      id="player1move0"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player1move1"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player1move2"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player1move3"
+      value="">
+  </div>
+
+  <div>
+    <h3 class="x"
+      id="chosenPlayer2"></h3>
+    <h3 class="z"
+      id="hpPlayer2"></h3>
+  </div>
+  <div>
+    <img class="y"
+      id="playerImg2"
+      src=""
+      alt="">
+  </div>
+  <div>
+    <!-- Player 2 moves -->
+    <!-- <input type="button"
+      class="btn"
+      id="player2move0"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player2move1"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player2move2"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player2move3"
+      value="">
+  </div>
+
+  <div>
+    <h3 class="x"
+      id="chosenPlayer3"></h3>
+    <h3 class="z"
+      id="hpPlayer3"></h3>
+  </div>
+  <div>
+    <img class="y"
+      id="playerImg3"
+      src=""
+      alt="">
+  </div>
+  <div> -->
+    <!-- Player 3 moves -->
+    <!-- <input type="button"
+      class="btn"
+      id="player3move0"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player3move1"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player3move2"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player3move3"
+      value="">
+  </div>
+
+  <div>
+    <h3 class="x"
+      id="chosenPlayer4"></h3>
+    <h3 class="z"
+      id="hpPlayer4"></h3>
+  </div>
+  <div>
+    <img class="y"
+      id="playerImg4"
+      src=""
+      alt="">
+  </div>
+  <div> -->
+    <!-- Player 4 moves -->
+    <!-- <input type="button"
+      class="btn"
+      id="player4move0"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player4move1"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player4move2"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player4move3"
+      value="">
+  </div>
+
+  <div>
+    <h3 class="x"
+      id="chosenPlayer5"></h3>
+    <h3 class="z"
+      id="hpPlayer5"></h3>
+  </div>
+  <div>
+    <img class="y"
+      id="playerImg5"
+      src=""
+      alt="">
+  </div>
+  <div> -->
+    <!-- Player 5 moves -->
+    <!-- <input type="button"
+      class="btn"
+      id="player5move0"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player5move1"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player5move2"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player5move3"
+      value="">
+  </div>
+
+  <div>
+    <h3 class="x"
+      id="chosenPlayer6"></h3>
+    <h3 class="z"
+      id="hpPlayer6"></h3>
+  </div>
+  <div>
+    <img class="y"
+      id="playerImg6"
+      src=""
+      alt="">
+  </div>
+  <div> -->
+    <!-- Player 6 moves -->
+    <!-- <input type="button"
+      class="btn"
+      id="player6move0"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player6move1"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player6move2"
+      value="">
+    <input type="button"
+      class="btn"
+      id="player6move3"
+      value="">
+  </div> -->
+
+  <script type="module"
+    async
+    defer
+    src="./home/assets/searchScript4.js"></script>
+</body>
+
+</html>
